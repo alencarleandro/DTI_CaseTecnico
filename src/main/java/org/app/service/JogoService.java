@@ -64,10 +64,8 @@ public class JogoService {
                 jogo.getDataLancamento().isAfter(LocalDate.now())) {
             throw new IllegalArgumentException("Data de lançamento inválida: " + jogo.getDataLancamento());
         }
-        if (jogo.getNotaPessoal() != null) {
-            if (jogo.getNotaPessoal() < 0 || jogo.getNotaPessoal() > 10) {
-                throw new IllegalArgumentException("A nota pessoal deve estar entre 0 e 10.");
-            }
+        if (jogo.getNotaPessoal() != null && (jogo.getNotaPessoal() < 0 || jogo.getNotaPessoal() > 10)) {
+            throw new IllegalArgumentException("A nota pessoal deve estar entre 0 e 10.");
         }
     }
 }
