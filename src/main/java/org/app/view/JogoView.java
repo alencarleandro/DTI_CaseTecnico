@@ -161,7 +161,6 @@ public class JogoView {
         System.out.print(mensagem);
         String input = scanner.nextLine();
         if (input.equalsIgnoreCase("CANCELAR")) {
-            System.out.println("Operação cancelada!");
             return null;
         }
         return input;
