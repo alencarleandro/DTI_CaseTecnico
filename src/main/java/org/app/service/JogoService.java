@@ -4,7 +4,6 @@ import org.app.dao.JogoDAO;
 import org.app.model.Jogo;
 
 import java.time.LocalDate;
-import java.time.Year;
 import java.util.List;
 
 public class JogoService {
@@ -12,6 +11,11 @@ public class JogoService {
 
     public JogoService() {
         this.jogoDAO = new JogoDAO();
+        this.jogoDAO.criarTabela();
+    }
+
+    public JogoService(JogoDAO jogoDAO) {
+        this.jogoDAO = jogoDAO;
         this.jogoDAO.criarTabela();
     }
 
