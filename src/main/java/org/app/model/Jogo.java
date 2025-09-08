@@ -63,12 +63,12 @@ public class Jogo {
 
     @Override
     public String toString() {
-        return "Jogo{" +
-                "id=" + id +
-                ", titulo='" + titulo + '\'' +
-                ", genero='" + genero + '\'' +
-                ", dataLancamento=" + dataLancamento +
-                ", notaPessoal=" + notaPessoal +
-                '}';
+        String dataFormatada = (dataLancamento != null) ? dataLancamento.format(java.time.format.DateTimeFormatter.ofPattern("dd/MM/yyyy")) : "—";
+        String nota = (notaPessoal != null) ? String.format("%.1f", notaPessoal) : "—";
+
+        return String.format(
+                "ID: %d | Título: %s | Gênero: %s | Data de Lançamento: %s | Nota Pessoal: %s",
+                id, titulo, genero, dataFormatada, nota
+        );
     }
 }
