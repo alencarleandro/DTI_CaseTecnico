@@ -3,6 +3,7 @@ package org.app.service;
 import org.app.dao.JogoDAO;
 import org.app.model.Jogo;
 
+import java.time.LocalDate;
 import java.time.Year;
 import java.util.List;
 
@@ -11,7 +12,7 @@ public class JogoService {
 
     public JogoService() {
         this.jogoDAO = new JogoDAO();
-        this.jogoDAO.criarTabela(); // garante que a tabela exista
+        this.jogoDAO.criarTabela();
     }
 
     public void cadastrarJogo(Jogo jogo) {
@@ -56,8 +57,17 @@ public class JogoService {
         if (jogo.getGenero() == null || jogo.getGenero().isBlank()) {
             throw new IllegalArgumentException("O gênero do jogo é obrigatório.");
         }
-        if (jogo.getAnoLancamento() <= 1970 || jogo.getAnoLancamento() > Year.now().getValue()) {
-            throw new IllegalArgumentException("Ano de lançamento inválido: " + jogo.getAnoLancamento());
+        if (jogo.getDataLancamento() == null) {
+            throw new IllegalArgumentException("A data de lançamento é obrigatória.");
+        }
+        if (jogo.getDataLancamento().isBefore(LocalDate.of(1970, 1, 1)) ||
+                jogo.getDataLancamento().isAfter(LocalDate.now())) {
+            throw new IllegalArgumentException("Data de lançamento inválida: " + jogo.getDataLancamento());
+        }
+        if (jogo.getNotaPessoal() != null) {
+            if (jogo.getNotaPessoal() < 0 || jogo.getNotaPessoal() > 10) {
+                throw new IllegalArgumentException("A nota pessoal deve estar entre 0 e 10.");
+            }
         }
     }
 }

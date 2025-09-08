@@ -7,16 +7,18 @@ public class Jogo {
     private int id;
     private String titulo;
     private String genero;
-    private int anoLancamento;
+    private LocalDate dataLancamento;
+    private Double notaPessoal;
 
     public Jogo() {
     }
 
-    public Jogo(int id, String titulo, String genero, int anoLancamento, String desenvolvedora, Double nota, LocalDate dataRegistro) {
+    public Jogo(int id, String titulo, String genero, LocalDate dataLancamento, Double notaPessoal) {
         this.id = id;
         this.titulo = titulo;
         this.genero = genero;
-        this.anoLancamento = anoLancamento;
+        this.dataLancamento = dataLancamento;
+        this.notaPessoal = notaPessoal;
     }
 
     public int getId() {
@@ -43,12 +45,20 @@ public class Jogo {
         this.genero = genero;
     }
 
-    public int getAnoLancamento() {
-        return anoLancamento;
+    public LocalDate getDataLancamento() {
+        return dataLancamento;
     }
 
-    public void setAnoLancamento(int anoLancamento) {
-        this.anoLancamento = anoLancamento;
+    public void setDataLancamento(LocalDate dataLancamento) {
+        this.dataLancamento = dataLancamento;
+    }
+
+    public Double getNotaPessoal() {
+        return notaPessoal;
+    }
+
+    public void setNotaPessoal(Double notaPessoal) {
+        this.notaPessoal = notaPessoal;
     }
 
     @Override
@@ -57,7 +67,8 @@ public class Jogo {
                 "id=" + id +
                 ", titulo='" + titulo + '\'' +
                 ", genero='" + genero + '\'' +
-                ", anoLancamento=" + anoLancamento +
+                ", dataLancamento=" + dataLancamento +
+                ", notaPessoal=" + notaPessoal +
                 '}';
     }
 }

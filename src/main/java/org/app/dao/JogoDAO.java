@@ -16,7 +16,8 @@ public class JogoDAO {
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 titulo TEXT NOT NULL,
                 genero TEXT NOT NULL,
-                ano_lancamento INTEGER NOT NULL
+                data_lancamento TEXT NOT NULL,
+                nota_pessoal REAL
             );
         """;
 
@@ -29,13 +30,18 @@ public class JogoDAO {
     }
 
     public void inserir(Jogo jogo) {
-        String sql = "INSERT INTO jogo(titulo, genero, ano_lancamento) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO jogo(titulo, genero, data_lancamento, nota_pessoal) VALUES (?, ?, ?, ?)";
         try (Connection conn = ConexaoSQLite.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
             pstmt.setString(1, jogo.getTitulo());
             pstmt.setString(2, jogo.getGenero());
-            pstmt.setInt(3, jogo.getAnoLancamento());
+            pstmt.setString(3, jogo.getDataLancamento().toString());
+            if (jogo.getNotaPessoal() != null) {
+                pstmt.setDouble(4, jogo.getNotaPessoal());
+            } else {
+                pstmt.setNull(4, Types.REAL);
+            }
 
             pstmt.executeUpdate();
         } catch (SQLException e) {
@@ -56,7 +62,11 @@ public class JogoDAO {
                 jogo.setId(rs.getInt("id"));
                 jogo.setTitulo(rs.getString("titulo"));
                 jogo.setGenero(rs.getString("genero"));
-                jogo.setAnoLancamento(rs.getInt("ano_lancamento"));
+                jogo.setDataLancamento(LocalDate.parse(rs.getString("data_lancamento")));
+                double nota = rs.getDouble("nota_pessoal");
+                if (!rs.wasNull()) {
+                    jogo.setNotaPessoal(nota);
+                }
                 jogos.add(jogo);
             }
         } catch (SQLException e) {
@@ -79,7 +89,11 @@ public class JogoDAO {
                 jogo.setId(rs.getInt("id"));
                 jogo.setTitulo(rs.getString("titulo"));
                 jogo.setGenero(rs.getString("genero"));
-                jogo.setAnoLancamento(rs.getInt("ano_lancamento"));
+                jogo.setDataLancamento(LocalDate.parse(rs.getString("data_lancamento")));
+                double nota = rs.getDouble("nota_pessoal");
+                if (!rs.wasNull()) {
+                    jogo.setNotaPessoal(nota);
+                }
                 return jogo;
             }
         } catch (SQLException e) {
@@ -89,14 +103,19 @@ public class JogoDAO {
     }
 
     public void atualizar(Jogo jogo) {
-        String sql = "UPDATE jogo SET titulo=?, genero=?, ano_lancamento=? WHERE id=?";
+        String sql = "UPDATE jogo SET titulo=?, genero=?, data_lancamento=?, nota_pessoal=? WHERE id=?";
         try (Connection conn = ConexaoSQLite.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
             pstmt.setString(1, jogo.getTitulo());
             pstmt.setString(2, jogo.getGenero());
-            pstmt.setInt(3, jogo.getAnoLancamento());
-            pstmt.setInt(4, jogo.getId());
+            pstmt.setString(3, jogo.getDataLancamento().toString());
+            if (jogo.getNotaPessoal() != null) {
+                pstmt.setDouble(4, jogo.getNotaPessoal());
+            } else {
+                pstmt.setNull(4, Types.REAL);
+            }
+            pstmt.setInt(5, jogo.getId());
 
             pstmt.executeUpdate();
         } catch (SQLException e) {
