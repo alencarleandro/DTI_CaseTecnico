@@ -25,18 +25,14 @@ public class JogoView {
         do {
             exibirMenu();
             opcao = lerInteiro("Escolha uma opção: ");
-            try {
-                switch (opcao) {
-                    case 1 -> cadastrarJogo();
-                    case 2 -> listarJogos();
-                    case 3 -> buscarJogoPorId();
-                    case 4 -> atualizarJogo();
-                    case 5 -> deletarJogo();
-                    case 0 -> System.out.println("Saindo...");
-                    default -> System.out.println("Opção inválida!");
-                }
-            } catch (Exception e) {
-                System.out.println("Erro: " + e.getMessage());
+            switch (opcao) {
+                case 1 -> cadastrarJogo();
+                case 2 -> listarJogos();
+                case 3 -> buscarJogoPorId();
+                case 4 -> atualizarJogo();
+                case 5 -> deletarJogo();
+                case 0 -> System.out.println("Saindo...");
+                default -> System.out.println("Opção inválida!");
             }
         } while (opcao != 0);
     }
@@ -56,16 +52,62 @@ public class JogoView {
         System.out.println("Digite 'CANCELAR' a qualquer momento para abortar a operação.\n");
 
         String titulo = lerTexto("Título: ");
-        if (titulo == null || titulo.isBlank()) return;
+        if (titulo == null || titulo.isBlank()){
+            System.out.println("Operação cancelada!");
+            return;
+        }
 
         String genero = lerTexto("Gênero: ");
-        if (genero == null || genero.isBlank()) return;
+        if (genero == null || genero.isBlank()){
+            System.out.println("Operação cancelada!");
+            return;
+        }
 
         LocalDate dataLancamento = lerData("Data de lançamento (dd/MM/yyyy): ");
         if (dataLancamento == null) return;
 
         Double notaPessoal = lerNota("Nota pessoal (0-10, opcional): ");
-        controller.cadastrarJogo(titulo, genero, dataLancamento, notaPessoal);
+
+        try {
+            controller.cadastrarJogo(titulo, genero, dataLancamento, notaPessoal);
+            System.out.println("Jogo cadastrado com sucesso!");
+        } catch (IllegalArgumentException e) {
+            System.out.println("Erro ao cadastrar jogo: " + e.getMessage());
+        }
+    }
+
+    private void atualizarJogo() {
+        System.out.println("\n--- Atualizar Jogo ---");
+
+        Integer id = lerIdExistente("ID do jogo: ");
+        if (id == null) {
+            System.out.println("Operação cancelada!");
+            return;
+        }
+
+        String titulo = lerTexto("Novo título: ");
+        if (titulo == null || titulo.isBlank()) {
+            System.out.println("Operação cancelada!");
+            return;
+        }
+
+        String genero = lerTexto("Novo gênero: ");
+        if (genero == null || genero.isBlank()) {
+            System.out.println("Operação cancelada!");
+            return;
+        }
+
+        LocalDate dataLancamento = lerData("Nova data de lançamento (dd/MM/yyyy): ");
+        if (dataLancamento == null) return;
+
+        Double notaPessoal = lerNota("Nova nota pessoal (0-10, opcional): ");
+
+        try {
+            controller.atualizarJogo(id, titulo, genero, dataLancamento, notaPessoal);
+            System.out.println("Jogo atualizado com sucesso!");
+        } catch (IllegalArgumentException e) {
+            System.out.println("Erro ao atualizar jogo: " + e.getMessage());
+        }
     }
 
     private void listarJogos() {
@@ -85,7 +127,6 @@ public class JogoView {
                 .orElse(1);
 
         System.out.println("\n--- Lista de Jogos ---");
-
         for (Jogo j : jogos) {
             String notaStr = j.getNotaPessoal() != null ? String.format("%.1f", j.getNotaPessoal()) : "—";
             System.out.printf(
@@ -97,36 +138,27 @@ public class JogoView {
     }
 
     private void buscarJogoPorId() {
-        System.out.println("\n--- Buscar Jogo por ID ---");
         int id = lerInteiro("ID do jogo: ");
-        Jogo jogo = controller.buscarJogoPorId(id);
-        System.out.println(jogo);
-    }
-
-    private void atualizarJogo() {
-        System.out.println("\n--- Atualizar Jogo ---");
-        int id = lerInteiro("ID do jogo: ");
-        String titulo = lerTexto("Novo título: ");
-        if (titulo == null) return;
-
-        String genero = lerTexto("Novo gênero: ");
-        if (genero == null) return;
-
-        LocalDate dataLancamento = lerData("Nova data de lançamento (dd/MM/yyyy): ");
-        if (dataLancamento == null) return;
-
-        Double notaPessoal = lerNota("Nova nota pessoal (0-10, opcional): ");
-        controller.atualizarJogo(id, titulo, genero, dataLancamento, notaPessoal);
+        try {
+            Jogo jogo = controller.buscarJogoPorId(id);
+            System.out.println(jogo);
+        } catch (IllegalArgumentException e) {
+            System.out.println("" + e.getMessage());
+        }
     }
 
     private void deletarJogo() {
-        System.out.println("\n--- Deletar Jogo ---");
         int id = lerInteiro("ID do jogo: ");
-        controller.deletarJogo(id);
+        try {
+            controller.deletarJogo(id);
+            System.out.println("Jogo deletado com sucesso!");
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     private String lerTexto(String mensagem) {
-        System.out.print(mensagem );
+        System.out.print(mensagem);
         String input = scanner.nextLine();
         if (input.equalsIgnoreCase("CANCELAR")) {
             System.out.println("Operação cancelada!");
@@ -162,10 +194,9 @@ public class JogoView {
         }
     }
 
-
     private Double lerNota(String mensagem) {
         while (true) {
-            System.out.print(mensagem );
+            System.out.print(mensagem);
             String input = scanner.nextLine();
             if (input.isBlank() || input.equalsIgnoreCase("CANCELAR")) {
                 System.out.println("Operação cancelada!");
@@ -173,13 +204,30 @@ public class JogoView {
             }
             try {
                 double valor = Double.parseDouble(input);
-                if (valor < 0 || valor > 10) {
-                    System.out.println("Valor inválido! Deve estar entre 0 e 10.");
-                } else {
-                    return valor;
+                return valor; // validação do intervalo feita no Service
+            } catch (NumberFormatException e) {
+                System.out.println("Número inválido! Digite um valor numérico ou deixe em branco.");
+            }
+        }
+    }
+
+    private Integer lerIdExistente(String mensagem) {
+        while (true) {
+            System.out.print(mensagem);
+            String input = scanner.nextLine().trim();
+            if (input.isBlank()) {
+                return null;
+            }
+            try {
+                int id = Integer.parseInt(input);
+                try {
+                    controller.buscarJogoPorId(id);
+                    return id;
+                } catch (IllegalArgumentException e) {
+                    System.out.println("ID não encontrado. Tente novamente ou pressione Enter para cancelar.");
                 }
             } catch (NumberFormatException e) {
-                System.out.println("Número inválido! Digite um valor entre 0 e 10 ou deixe em branco.");
+                System.out.println("Número inválido! Digite um ID válido ou pressione Enter para cancelar.");
             }
         }
     }

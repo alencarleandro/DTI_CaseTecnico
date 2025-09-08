@@ -18,7 +18,6 @@ public class JogoService {
     public void cadastrarJogo(Jogo jogo) {
         validarJogo(jogo);
         jogoDAO.inserir(jogo);
-        System.out.println("Jogo cadastrado com sucesso!");
     }
 
     public List<Jogo> listarJogos() {
@@ -39,7 +38,6 @@ public class JogoService {
             throw new IllegalArgumentException("Não é possível atualizar. Jogo não encontrado.");
         }
         jogoDAO.atualizar(jogo);
-        System.out.println("Jogo atualizado com sucesso!");
     }
 
     public void deletarJogo(int id) {
@@ -47,7 +45,6 @@ public class JogoService {
             throw new IllegalArgumentException("Não é possível deletar. Jogo não encontrado.");
         }
         jogoDAO.deletar(id);
-        System.out.println("Jogo deletado com sucesso!");
     }
 
     private void validarJogo(Jogo jogo) {
