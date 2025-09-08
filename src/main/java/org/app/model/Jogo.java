@@ -1,4 +1,4 @@
-package model;
+package org.app.model;
 
 import java.time.LocalDate;
 
@@ -9,7 +9,8 @@ public class Jogo {
     private String genero;
     private int anoLancamento;
 
-    public Jogo() {}
+    public Jogo() {
+    }
 
     public Jogo(int id, String titulo, String genero, int anoLancamento, String desenvolvedora, Double nota, LocalDate dataRegistro) {
         this.id = id;
@@ -18,17 +19,37 @@ public class Jogo {
         this.anoLancamento = anoLancamento;
     }
 
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
+    public int getId() {
+        return id;
+    }
 
-    public String getTitulo() { return titulo; }
-    public void setTitulo(String titulo) { this.titulo = titulo; }
+    public void setId(int id) {
+        this.id = id;
+    }
 
-    public String getGenero() { return genero; }
-    public void setGenero(String genero) { this.genero = genero; }
+    public String getTitulo() {
+        return titulo;
+    }
 
-    public int getAnoLancamento() { return anoLancamento; }
-    public void setAnoLancamento(int anoLancamento) { this.anoLancamento = anoLancamento; }
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public String getGenero() {
+        return genero;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+
+    public int getAnoLancamento() {
+        return anoLancamento;
+    }
+
+    public void setAnoLancamento(int anoLancamento) {
+        this.anoLancamento = anoLancamento;
+    }
 
     @Override
     public String toString() {

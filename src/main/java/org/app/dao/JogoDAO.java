@@ -1,4 +1,4 @@
-package dao;
+package org.app.dao;
 
 public class JogoDAO {
 }

@@ -1,4 +1,4 @@
-package view;
+package org.app.view;
 
 public class JogoView {
 }
