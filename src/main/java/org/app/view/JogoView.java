@@ -53,13 +53,13 @@ public class JogoView {
 
         String titulo = lerTexto("Título: ");
         if (titulo == null || titulo.isBlank()){
-            System.out.println("Operação cancelada!");
+            System.out.println("Campo obrigatorio operação cancelada!");
             return;
         }
 
         String genero = lerTexto("Gênero: ");
         if (genero == null || genero.isBlank()){
-            System.out.println("Operação cancelada!");
+            System.out.println("Campo obrigatorio operação cancelada!");
             return;
         }
 
@@ -81,19 +81,19 @@ public class JogoView {
 
         Integer id = lerIdExistente("ID do jogo: ");
         if (id == null) {
-            System.out.println("Operação cancelada!");
+            System.out.println("Campo obrigatorio operação cancelada!");
             return;
         }
 
         String titulo = lerTexto("Novo título: ");
         if (titulo == null || titulo.isBlank()) {
-            System.out.println("Operação cancelada!");
+            System.out.println("Campo obrigatorio operação cancelada!");
             return;
         }
 
         String genero = lerTexto("Novo gênero: ");
         if (genero == null || genero.isBlank()) {
-            System.out.println("Operação cancelada!");
+            System.out.println("Campo obrigatorio operação cancelada!");
             return;
         }
 
@@ -182,7 +182,7 @@ public class JogoView {
             System.out.print(mensagem);
             String input = scanner.nextLine().trim();
             if (input.isBlank() || input.equalsIgnoreCase("CANCELAR")) {
-                System.out.println("Operação cancelada!");
+                System.out.println("Campo obrigatorio operação cancelada!");
                 return null;
             }
             try {
