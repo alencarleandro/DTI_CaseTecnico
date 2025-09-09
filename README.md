@@ -5,14 +5,16 @@ Este projeto é uma solução para o desafio técnico da dti digital, consistind
 ---
 
 ## 📑 Sumário
-- [🕹️ Recurso Principal: Jogo](#recurso-principal-jogo)
-- [🛠️ Arquitetura e Tecnologias](#arquitetura-e-tecnologias)
-- [⬇️ Instalação e Dependências](#instalacao-e-dependencias)
-- [🐳 Como Executar com Docker](#como-executar-com-docker)
-- [⚙️ Execução Manual (Java/Maven)](#execucao-manual-javamaven)
-- [✨ Funcionalidades e Exemplos de Uso](#funcionalidades-e-exemplos-de-uso)
-- [🚀 Possíveis Melhorias Futuras](#possiveis-melhorias-futuras)
-- [📞 Contato](#contato)
+- [🕹️ Recurso Principal: Jogo](#-recurso-principal-jogo)
+- [🛠️ Arquitetura e Tecnologias](#-arquitetura-e-tecnologias)
+- [⬇️ Instalação e Dependências](#-instalação-e-dependências)
+- [🐳 Como Executar com Docker](#-como-executar-com-docker)
+- [⚙️ Execução Manual (Javamaven)](#-execução-manual-javamaven)
+- [✨ Funcionalidades e Exemplos de Uso](#-funcionalidades-e-exemplos-de-uso)
+- [📝 Exemplo de Arquivo de Log](#-exemplo-de-arquivo-de-log)
+- [🗄️ Queries SQL Utilizadas](#-queries-sql-utilizadas)
+- [🚀 Possíveis Melhorias Futuras](#-possíveis-melhorias-futuras)
+- [📞 Contato](#-contato)
 
 ---
 

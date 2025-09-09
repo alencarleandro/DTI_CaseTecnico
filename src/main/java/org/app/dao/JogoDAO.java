@@ -1,6 +1,7 @@
 package org.app.dao;
 
 import org.app.config.ConexaoSQLite;
+import org.app.config.LogManager;
 import org.app.model.Jogo;
 
 import java.sql.*;
@@ -24,8 +25,9 @@ public class JogoDAO {
         try (Connection conn = ConexaoSQLite.getConnection();
              Statement stmt = conn.createStatement()) {
             stmt.execute(sql);
+            LogManager.log("Tabela 'jogo' criada ou já existe.");
         } catch (SQLException e) {
-            e.printStackTrace();
+            LogManager.logError("Erro ao criar tabela 'jogo': " + e.getMessage());
         }
     }
 
@@ -44,8 +46,9 @@ public class JogoDAO {
             }
 
             pstmt.executeUpdate();
+            LogManager.log("Jogo inserido: " + jogo.getTitulo());
         } catch (SQLException e) {
-            e.printStackTrace();
+            LogManager.logError("Erro ao inserir jogo: " + e.getMessage());
         }
     }
 
@@ -69,8 +72,9 @@ public class JogoDAO {
                 }
                 jogos.add(jogo);
             }
+            LogManager.log("Listagem de jogos realizada. Total: " + jogos.size());
         } catch (SQLException e) {
-            e.printStackTrace();
+            LogManager.logError("Erro ao listar jogos: " + e.getMessage());
         }
 
         return jogos;
@@ -94,10 +98,11 @@ public class JogoDAO {
                 if (!rs.wasNull()) {
                     jogo.setNotaPessoal(nota);
                 }
+                LogManager.log("Jogo encontrado com ID: " + id);
                 return jogo;
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            LogManager.logError("Erro ao buscar jogo por ID: " + e.getMessage());
         }
         return null;
     }
@@ -118,8 +123,9 @@ public class JogoDAO {
             pstmt.setInt(5, jogo.getId());
 
             pstmt.executeUpdate();
+            LogManager.log("Jogo atualizado: ID " + jogo.getId());
         } catch (SQLException e) {
-            e.printStackTrace();
+            LogManager.logError("Erro ao atualizar jogo: " + e.getMessage());
         }
     }
 
@@ -130,8 +136,9 @@ public class JogoDAO {
 
             pstmt.setInt(1, id);
             pstmt.executeUpdate();
+            LogManager.log("Jogo deletado: ID " + id);
         } catch (SQLException e) {
-            e.printStackTrace();
+            LogManager.logError("Erro ao deletar jogo: " + e.getMessage());
         }
     }
 }
