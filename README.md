@@ -1,78 +1,119 @@
-# DTI Case Técnico - Sistema de Gerenciamento de Jogos
+# 🎮 DTI Case Técnico - Sistema de Gerenciamento de Jogos
 
-Este projeto foi desenvolvido como solução para o caso técnico do processo seletivo de estágio da dti digital. O objetivo é criar um sistema CRUD para cadastro, consulta, atualização e remoção de jogos, com persistência em banco de dados SQLite e testes unitários.
-
----
-
-## Requisitos Atendidos
-
-- Cadastro de jogos com título, gênero, data de lançamento e nota pessoal (opcional).
-- Listagem de todos os jogos cadastrados.
-- Busca de jogo por ID.
-- Atualização de dados de um jogo existente.
-- Remoção de jogo por ID.
-- Validações de campos obrigatórios e regras de negócio.
-- Persistência dos dados em banco SQLite.
-- Testes unitários para a camada de serviço (`JogoService`), utilizando JUnit 5 e Mockito.
+Este projeto é uma solução para o desafio técnico da dti digital, consistindo em um sistema CRUD completo para cadastro, consulta, atualização e remoção de jogos, com persistência em banco SQLite, arquitetura MVC, testes unitários e pronto para execução via Docker.
 
 ---
 
-## Tecnologias Utilizadas
+## 📑 Sumário
+- [🕹️ Recurso Principal: Jogo](#recurso-principal-jogo)
+- [🛠️ Arquitetura e Tecnologias](#arquitetura-e-tecnologias)
+- [⬇️ Instalação e Dependências](#instalacao-e-dependencias)
+- [🐳 Como Executar com Docker](#como-executar-com-docker)
+- [⚙️ Execução Manual (Java/Maven)](#execucao-manual-javamaven)
+- [✨ Funcionalidades e Exemplos de Uso](#funcionalidades-e-exemplos-de-uso)
+- [🚀 Possíveis Melhorias Futuras](#possiveis-melhorias-futuras)
+- [📞 Contato](#contato)
 
+---
+
+## 🕹️ Recurso Principal: Jogo
+
+A aplicação gerencia o recurso **Jogo**, que possui as seguintes propriedades:
+
+| Campo           | Obrigatório | Tipo de Dado | Descrição                                 |
+|-----------------|-------------|--------------|--------------------------------------------|
+| id              | Sim         | Inteiro      | Identificador único (gerado automaticamente)|
+| titulo          | Sim         | String       | Título do jogo                             |
+| genero          | Sim         | String       | Gênero do jogo                             |
+| dataLancamento  | Sim         | Data         | Data de lançamento (formato dd/MM/yyyy)    |
+| notaPessoal     | Não         | Double       | Nota pessoal atribuída ao jogo (0 a 10)    |
+
+- **Obrigatórios:** `id`, `titulo`, `genero`, `dataLancamento`
+- **Opcionais:** `notaPessoal`
+
+Validações são aplicadas para garantir que os campos obrigatórios sejam preenchidos e que a nota pessoal, se informada, esteja entre 0 e 10.
+
+---
+
+## 🛠️ Linguagem Escolhida
 - **Java 21**
-- **Maven** (gerenciamento de dependências)
-- **JUnit 5** (testes unitários)
-- **Mockito** (mocks para testes)
-- **SQLite** (banco de dados embarcado)
-- **SLF4J** (logs)
 
 ---
 
-## Estrutura do Projeto
+## 🛠️ Arquitetura e Tecnologias
+- ☕ **Java 21**
+- 📦 **Maven** (gerenciamento de dependências)
+- 🧪 **JUnit 5** (testes unitários)
+- 🕵️‍♂️ **Mockito** (mocks para testes)
+- 🗄️ **SQLite** (banco de dados embarcado)
+- 📝 **SLF4J** (logs)
+- 🐳 **Docker** (containerização)
 
+### 📁 Estrutura do Projeto
 ```
 src/
   main/
     java/
-      org/
-        app/
-          config/      # Configuração do banco SQLite
-          controller/  # Lógica de orquestração (JogoController)
-          dao/         # Acesso a dados (JogoDAO)
-          model/       # Entidade Jogo
-          service/     # Regras de negócio (JogoService)
-          view/        # Interface de console (JogoView)
-          Main.java    # Classe principal
+      org/app/
+        config/      # Configuração do banco SQLite
+        controller/  # Orquestração (JogoController)
+        dao/         # Acesso a dados (JogoDAO)
+        model/       # Entidade Jogo
+        service/     # Regras de negócio (JogoService)
+        view/        # Interface de console (JogoView)
+        Main.java    # Classe principal
   test/
-    java/
-      org/
-        app/
-          service/
-            JogoServiceTest.java
+    java/org/app/service/JogoServiceTest.java
+Dockerfile
 pom.xml
 README.md
 ```
 
 ---
 
-## Como Executar
+## ⬇️ Instalação e Dependências
 
-1. **Pré-requisitos:**  
-   - Java 21 instalado  
-   - Maven instalado
+### 1. Dependências
+- ☕ **Java 21**: [Download](https://www.oracle.com/br/java/technologies/downloads/#java21)
+- 📦 **Maven**: [Download](https://maven.apache.org/download.cgi)
+- 🐳 **Docker** (opcional, para execução via container): [Download](https://www.docker.com/get-started/)
 
-2. **Clone o repositório e acesse a pasta do projeto:**
-   ```sh
-   git clone <url-do-repositorio>
-   cd DTI_CaseTecnico
-   ```
+As dependências do projeto são gerenciadas automaticamente pelo Maven (veja `pom.xml`).
 
-3. **Compile o projeto:**
+### 2. Instalação
+- Clone o repositório:
+  ```sh
+  git clone <url-do-repositorio>
+  cd DTI_CaseTecnico
+  ```
+- Para rodar manualmente, siga para a seção de execução manual.
+- Para rodar via Docker, siga para a próxima seção.
+
+---
+
+## 🐳 Como Executar com Docker
+
+> **Pré-requisito:** Docker instalado
+
+Execute o comando abaixo para rodar a aplicação em modo interativo no terminal:
+
+```sh
+docker run -it --rm ad3ln0r/dti-casetecnico-leandroalencar:1.0
+```
+
+O banco de dados será criado automaticamente no primeiro uso.
+
+---
+
+## ⚙️ Execução Manual (Java/Maven)
+
+> **Pré-requisitos:** Java 21 e Maven instalados
+
+1. Compile o projeto:
    ```sh
    mvn clean package
    ```
-
-4. **Execute a aplicação:**
+2. Execute a aplicação:
    ```sh
    mvn exec:java -Dexec.mainClass="org.app.Main"
    ```
@@ -80,36 +121,92 @@ README.md
 
 ---
 
-## Como Executar os Testes
+## ✨ Funcionalidades e Exemplos de Uso
 
-Para rodar os testes unitários (necessário para Java 21):
+A aplicação é totalmente interativa via console. Veja como utilizar cada funcionalidade:
 
-```sh
-mvn test -Dnet.bytebuddy.experimental=true
+### 🏠 Menu Principal
+```
+=== MENU DE JOGOS ===
+1 - Cadastrar Jogo
+2 - Listar Jogos
+3 - Buscar Jogo por ID
+4 - Atualizar Jogo
+5 - Deletar Jogo
+0 - Sair
 ```
 
+### ➕ 1. Cadastrar Jogo
+- Preencha os campos obrigatórios (título, gênero, data de lançamento). Nota pessoal é opcional.
+- Exemplo:
+```
+--- Cadastrar Jogo ---
+Título: The Legend of Zelda
+Gênero: Aventura
+Data de lançamento (dd/MM/yyyy): 21/02/1986
+Nota pessoal (0-10, opcional): 9.5
+✅ Jogo cadastrado com sucesso!
+```
+
+### 📋 2. Listar Jogos
+- Exibe todos os jogos cadastrados:
+```
+--- Lista de Jogos ---
+ID: 1 | Título: The Legend of Zelda | Gênero: Aventura | Data de Lançamento: 21/02/1986 | Nota Pessoal: 9.5
+```
+
+### 🔍 3. Buscar Jogo por ID
+- Informe o ID do jogo para visualizar seus detalhes:
+```
+ID do jogo: 1
+ID: 1 | Título: The Legend of Zelda | Gênero: Aventura | Data de Lançamento: 21/02/1986 | Nota Pessoal: 9.5
+```
+
+### ✏️ 4. Atualizar Jogo
+- Informe o ID do jogo e os novos dados:
+```
+--- Atualizar Jogo ---
+ID do jogo: 1
+Novo título: The Legend of Zelda: Remastered
+Novo gênero: Aventura
+Nova data de lançamento (dd/MM/yyyy): 21/02/1986
+Nova nota pessoal (0-10, opcional): 10
+✅ Jogo atualizado com sucesso!
+```
+
+### 🗑️ 5. Deletar Jogo
+- Informe o ID do jogo para removê-lo:
+```
+ID do jogo: 1
+🗑️ Jogo deletado com sucesso!
+```
+
+### ⚠️ 6. Validações e Mensagens de Erro
+- Campos obrigatórios não preenchidos:
+```
+Título: 
+❌ Campo obrigatório, operação cancelada!
+```
+- Busca por ID inexistente:
+```
+ID do jogo: 99
+❌ Nenhum jogo encontrado com ID 99
+```
+
+Esses exemplos ilustram o fluxo principal do sistema, incluindo validações e mensagens amigáveis para o usuário. O sistema é totalmente interativo e orienta o usuário em cada etapa.
+
 ---
 
-## Observações e Decisões de Implementação
-
-- O projeto segue o padrão MVC (Model-View-Controller).
-- A camada de serviço (`JogoService`) foi testada com JUnit 5 e Mockito, incluindo cenários de sucesso e falha.
-- Foram feitos ajustes para garantir compatibilidade do Mockito/Byte Buddy com Java 21.
-- O sistema é totalmente interativo via console, permitindo CRUD completo dos jogos.
-- O banco de dados é criado automaticamente na primeira execução.
+## 🚀 Possíveis Melhorias Futuras
+- 🖥️ Interface gráfica (GUI) ou API REST
+- 🔒 Autenticação de usuário
+- 📑 Paginação e filtros na listagem de jogos
+- 🧪 Mais testes automatizados (controller, DAO)
 
 ---
 
-## Possíveis Melhorias Futuras
-
-- Implementar interface gráfica (GUI) ou API REST.
-- Adicionar autenticação de usuário.
-- Paginação e filtros na listagem de jogos.
-- Mais testes automatizados (controller, DAO).
-
----
-
-## Contato
-
-Dúvidas ou sugestões:  
-Leandro Alencar
+## 📞 Contato
+Dúvidas ou sugestões:
+- **Leandro Alencar**
+- 📧 E-mail: Leandro130333.dev@gmail.com
+- 📱 WhatsApp/Telefone: (31) 98347-9067
