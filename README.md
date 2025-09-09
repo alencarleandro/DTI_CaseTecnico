@@ -107,19 +107,41 @@ O banco de dados será criado automaticamente no primeiro uso.
 
 ---
 
-## Execução Manual (Javamaven)
+## Execução Manual com Maven
 
 > **Pré-requisitos:** Java 21 e Maven instalados
 
-1. Compile o projeto:
-   ```sh
-   mvn clean package
-   ```
-2. Execute a aplicação:
-   ```sh
-   mvn exec:java -Dexec.mainClass="org.app.Main"
-   ```
-   Ou rode diretamente pelo seu IDE.
+### 1. Compilando o projeto
+Execute o comando abaixo para baixar as dependências e compilar o projeto:
+```sh
+mvn clean package
+```
+Isso irá gerar os arquivos JAR na pasta `target/`.
+
+### 2. Executando via Maven (modo recomendado para desenvolvimento)
+Você pode rodar a aplicação diretamente pelo Maven, que cuida do classpath automaticamente:
+```sh
+mvn exec:java -Dexec.mainClass="org.app.Main"
+```
+Ou rode diretamente pelo seu IDE (IntelliJ, Eclipse, VSCode, etc).
+
+### 3. Executando o JAR gerado
+
+- **JAR principal:**
+  ```sh
+  java -jar target/CaseTecnico_LeandroAlencar_DTI-1.0-SNAPSHOT.jar
+  ```
+  > **Atenção:** Esse JAR não inclui as dependências. Só funciona se você rodar via Maven ou IDE.
+
+- **JAR com dependências (recomendado para produção/entrega):**
+  ```sh
+  java -jar target/CaseTecnico_LeandroAlencar_DTI-1.0-SNAPSHOT-jar-with-dependencies.jar
+  ```
+  > **Esse JAR inclui todas as bibliotecas necessárias** (inclusive o driver do SQLite). Use esse comando para rodar em qualquer máquina, sem precisar de Maven ou IDE.
+
+### 4. Erros comuns
+- Se aparecer o erro `No suitable driver found for jdbc:sqlite:jogos.db`, significa que você está rodando o JAR principal sem dependências. Use o JAR `-jar-with-dependencies.jar`.
+- Se não conseguir deletar a pasta `target`, feche todos os programas que possam estar usando arquivos dela e tente novamente.
 
 ---
 
