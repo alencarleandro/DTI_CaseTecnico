@@ -247,6 +247,20 @@ DELETE FROM jogo WHERE id=?;
 
 ---
 
+## Executando o JAR com Dependências (Standalone)
+
+> **Recomendado para rodar fora do Maven/IDE**
+
+Após compilar o projeto com `mvn clean package`, utilize o JAR gerado com todas as dependências:
+
+```sh
+java -jar target/CaseTecnico_LeandroAlencar_DTI-1.0-SNAPSHOT-jar-with-dependencies.jar
+```
+
+Esse comando garante que todos os drivers e bibliotecas necessários estarão disponíveis, evitando erros como `No suitable driver found for jdbc:sqlite:jogos.db`.
+
+---
+
 ## Possíveis Melhorias Futuras
 - 🖥️ Interface gráfica (GUI) ou API REST
 - 🔒 Autenticação de usuário

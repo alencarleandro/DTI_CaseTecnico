@@ -1,4 +1,5 @@
 org\app\service\JogoService.class
+org\app\config\LogManager.class
 org\app\Main.class
 org\app\dao\JogoDAO.class
 org\app\controller\JogoController.class

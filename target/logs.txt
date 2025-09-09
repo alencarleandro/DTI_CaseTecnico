@@ -1,0 +1,5 @@
+==== LOGS DA EXECUÇÃO ====
+[LOG] Tabela 'jogo' criada ou já existe.
+[LOG] Recebida solicitação para listar jogos.
+[LOG] Listando todos os jogos.
+[LOG] Listagem de jogos realizada. Total: 1
