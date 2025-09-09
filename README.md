@@ -71,6 +71,10 @@ pom.xml
 README.md
 ```
 
+### Diagrama de Pacotes
+
+![Diagrama de Pacotes](DiagramaDePacotes.PNG)
+
 ---
 
 ## Instalação e Dependências
