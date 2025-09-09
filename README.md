@@ -5,20 +5,20 @@ Este projeto é uma solução para o desafio técnico da dti digital, consistind
 ---
 
 ## 📑 Sumário
-- [🕹️ Recurso Principal: Jogo](#-recurso-principal-jogo)
-- [🛠️ Arquitetura e Tecnologias](#-arquitetura-e-tecnologias)
-- [⬇️ Instalação e Dependências](#-instalação-e-dependências)
-- [🐳 Como Executar com Docker](#-como-executar-com-docker)
-- [⚙️ Execução Manual (Javamaven)](#-execução-manual-javamaven)
-- [✨ Funcionalidades e Exemplos de Uso](#-funcionalidades-e-exemplos-de-uso)
-- [📝 Exemplo de Arquivo de Log](#-exemplo-de-arquivo-de-log)
-- [🗄️ Queries SQL Utilizadas](#-queries-sql-utilizadas)
-- [🚀 Possíveis Melhorias Futuras](#-possíveis-melhorias-futuras)
-- [📞 Contato](#-contato)
+- [🕹️ Recurso Principal: Jogo](#recurso-principal-jogo)
+- [🛠️ Arquitetura e Tecnologias](#arquitetura-e-tecnologias)
+- [⬇️ Instalação e Dependências](#instalação-e-dependências)
+- [🐳 Como Executar com Docker](#como-executar-com-docker)
+- [⚙️ Execução Manual (Javamaven)](#execução-manual-javamaven)
+- [✨ Funcionalidades e Exemplos de Uso](#funcionalidades-e-exemplos-de-uso)
+- [📝 Exemplo de Arquivo de Log](#exemplo-de-arquivo-de-log)
+- [🗄️ Queries SQL Utilizadas](#queries-sql-utilizadas)
+- [🚀 Possíveis Melhorias Futuras](#possíveis-melhorias-futuras)
+- [📞 Contato](#contato)
 
 ---
 
-## 🕹️ Recurso Principal: Jogo
+## Recurso Principal: Jogo
 
 A aplicação gerencia o recurso **Jogo**, que possui as seguintes propriedades:
 
@@ -37,12 +37,12 @@ Validações são aplicadas para garantir que os campos obrigatórios sejam pree
 
 ---
 
-## 🛠️ Linguagem Escolhida
+## Linguagem Escolhida
 - **Java 21**
 
 ---
 
-## 🛠️ Arquitetura e Tecnologias
+## Arquitetura e Tecnologias
 - ☕ **Java 21**
 - 📦 **Maven** (gerenciamento de dependências)
 - 🧪 **JUnit 5** (testes unitários)
@@ -73,7 +73,7 @@ README.md
 
 ---
 
-## ⬇️ Instalação e Dependências
+## Instalação e Dependências
 
 ### 1. Dependências
 - ☕ **Java 21**: [Download](https://www.oracle.com/br/java/technologies/downloads/#java21)
@@ -93,7 +93,7 @@ As dependências do projeto são gerenciadas automaticamente pelo Maven (veja `p
 
 ---
 
-## 🐳 Como Executar com Docker
+## Como Executar com Docker
 
 > **Pré-requisito:** Docker instalado
 
@@ -107,7 +107,7 @@ O banco de dados será criado automaticamente no primeiro uso.
 
 ---
 
-## ⚙️ Execução Manual (Java/Maven)
+## Execução Manual (Javamaven)
 
 > **Pré-requisitos:** Java 21 e Maven instalados
 
@@ -123,7 +123,7 @@ O banco de dados será criado automaticamente no primeiro uso.
 
 ---
 
-## ✨ Funcionalidades e Exemplos de Uso
+## Funcionalidades e Exemplos de Uso
 
 A aplicação é totalmente interativa via console. Veja como utilizar cada funcionalidade:
 
@@ -199,7 +199,7 @@ Esses exemplos ilustram o fluxo principal do sistema, incluindo validações e m
 
 ---
 
-## 📝 Exemplo de Arquivo de Log
+## Exemplo de Arquivo de Log
 
 Ao final da execução, será gerado um arquivo `logs.txt` com o seguinte formato:
 
@@ -215,7 +215,7 @@ Ao final da execução, será gerado um arquivo `logs.txt` com o seguinte format
 
 ---
 
-## 🗄️ Queries SQL Utilizadas
+## Queries SQL Utilizadas
 
 Abaixo estão as principais queries SQL utilizadas pelo sistema para manipulação do banco de dados SQLite:
 
@@ -247,7 +247,7 @@ DELETE FROM jogo WHERE id=?;
 
 ---
 
-## 🚀 Possíveis Melhorias Futuras
+## Possíveis Melhorias Futuras
 - 🖥️ Interface gráfica (GUI) ou API REST
 - 🔒 Autenticação de usuário
 - 📑 Paginação e filtros na listagem de jogos
@@ -255,7 +255,7 @@ DELETE FROM jogo WHERE id=?;
 
 ---
 
-## 📞 Contato
+## Contato
 Dúvidas ou sugestões:
 - **Leandro Alencar**
 - 📧 E-mail: Leandro130333.dev@gmail.com

@@ -1,0 +1,7 @@
+==== LOGS DA EXECUÇÃO ====
+[LOG] Tabela 'jogo' criada ou já existe.
+[LOG] Recebida solicitação para cadastrar jogo: sekiro
+[LOG] Cadastrando jogo: sekiro
+[LOG] Jogo inserido: sekiro
+[LOG] Jogo cadastrado com sucesso: sekiro
+[LOG] Jogo cadastrado via controller: sekiro
