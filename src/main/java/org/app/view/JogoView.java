@@ -197,13 +197,9 @@ public class JogoView {
         while (true) {
             System.out.print(mensagem);
             String input = scanner.nextLine();
-            if (input.isBlank() || input.equalsIgnoreCase("CANCELAR")) {
-                System.out.println("Operação cancelada!");
-                return null;
-            }
             try {
                 double valor = Double.parseDouble(input);
-                return valor; // validação do intervalo feita no Service
+                return valor;
             } catch (NumberFormatException e) {
                 System.out.println("Número inválido! Digite um valor numérico ou deixe em branco.");
             }
