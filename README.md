@@ -197,6 +197,54 @@ Esses exemplos ilustram o fluxo principal do sistema, incluindo validações e m
 
 ---
 
+## 📝 Exemplo de Arquivo de Log
+
+Ao final da execução, será gerado um arquivo `logs.txt` com o seguinte formato:
+
+```
+==== LOGS DA EXECUÇÃO ====
+[LOG] Tabela 'jogo' criada ou já existe.
+[LOG] Recebida solicitação para cadastrar jogo: sekiro
+[LOG] Cadastrando jogo: sekiro
+[LOG] Jogo inserido: sekiro
+[LOG] Jogo cadastrado com sucesso: sekiro
+[LOG] Jogo cadastrado via controller: sekiro
+```
+
+---
+
+## 🗄️ Queries SQL Utilizadas
+
+Abaixo estão as principais queries SQL utilizadas pelo sistema para manipulação do banco de dados SQLite:
+
+```sql
+-- Criação da tabela
+CREATE TABLE IF NOT EXISTS jogo (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    titulo TEXT NOT NULL,
+    genero TEXT NOT NULL,
+    data_lancamento TEXT NOT NULL,
+    nota_pessoal REAL
+);
+
+-- Inserção de novo jogo
+INSERT INTO jogo(titulo, genero, data_lancamento, nota_pessoal) VALUES (?, ?, ?, ?);
+
+-- Listar todos os jogos
+SELECT * FROM jogo;
+
+-- Buscar jogo por ID
+SELECT * FROM jogo WHERE id = ?;
+
+-- Atualizar jogo existente
+UPDATE jogo SET titulo=?, genero=?, data_lancamento=?, nota_pessoal=? WHERE id=?;
+
+-- Deletar jogo
+DELETE FROM jogo WHERE id=?;
+```
+
+---
+
 ## 🚀 Possíveis Melhorias Futuras
 - 🖥️ Interface gráfica (GUI) ou API REST
 - 🔒 Autenticação de usuário
