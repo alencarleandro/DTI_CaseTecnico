@@ -1,0 +1,7 @@
+org\app\service\JogoService.class
+org\app\Main.class
+org\app\dao\JogoDAO.class
+org\app\controller\JogoController.class
+org\app\view\JogoView.class
+org\app\config\ConexaoSQLite.class
+org\app\model\Jogo.class
