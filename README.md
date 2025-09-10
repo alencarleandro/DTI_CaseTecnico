@@ -21,7 +21,7 @@ Este projeto é uma solução para o desafio técnico da dti digital, consistind
   - [✏️ 4. Atualizar Jogo](#%EF%B8%8F-4-atualizar-jogo)
   - [🗑️ 5. Deletar Jogo](#%EF%B8%8F-5-deletar-jogo)
 - [📝 Exemplo de Arquivo de Log](#-exemplo-de-arquivo-de-log)
-- [🗄️ Queries SQL Utilizadas](#%EF%B8%8F-queries-sql-utilizadas))
+- [🗄️ Queries SQL Utilizadas](#%EF%B8%8F-queries-sql-utilizadas)
 - [💡 Possíveis Melhorias Futuras](#-poss%C3%ADveis-melhorias-futuras)
 - [📬 Contato](#-contato)
 
