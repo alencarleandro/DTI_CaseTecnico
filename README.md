@@ -1,17 +1,18 @@
-# 🎮 DTI Case Técnico - Sistema de Gerenciamento de Jogos
+# DTI Case Tecnico - Sistema de Gerenciamento de Jogos
 
 Este projeto é uma solução para o desafio técnico da dti digital, consistindo em um sistema CRUD completo para cadastro, consulta, atualização e remoção de jogos, com persistência em banco 🗄️ SQLite, arquitetura MVC, testes unitários e pronto para execução via 🐳 Docker.
 
 ---
 
-## 📑 Sumário
+## Sumario
 - [Recurso Principal: Jogo](#recurso-principal-jogo)
+- [Linguagem Escolhida](#linguagem-escolhida)
 - [Arquitetura e Tecnologias](#arquitetura-e-tecnologias)
 - [Instalacao e Dependencias](#instalacao-e-dependencias)
 - [Execucao da Aplicacao](#execucao-da-aplicacao)
-- [Com Docker](#com-docker)
-- [Com Maven (Desenvolvimento)](#com-maven-desenvolvimento)
-- [JAR Standalone](#jar-standalone)
+  - [Com Docker](#com-docker)
+  - [Com Maven (Desenvolvimento)](#com-maven-desenvolvimento)
+  - [JAR Standalone](#jar-standalone)
 - [Como Usar Cada Funcionalidade (Passo a Passo)](#como-usar-cada-funcionalidade-passo-a-passo)
 - [Exemplo de Arquivo de Log](#exemplo-de-arquivo-de-log)
 - [Queries SQL Utilizadas](#queries-sql-utilizadas)
@@ -39,12 +40,12 @@ A aplicação gerencia o recurso **Jogo**, que possui as seguintes propriedades:
 
 ---
 
-## ☕ Linguagem Escolhida
+## Linguagem Escolhida
 - **Java 21**
 
 ---
 
-## 🛠️ Arquitetura e Tecnologias
+## Arquitetura e Tecnologias
 - ☕ **Java 21**
 - 📦 **Maven** (gerenciamento de dependências)
 - 🧪 **JUnit 5** (testes unitários)
