@@ -1,6 +1,6 @@
 # 🎮 DTI Case Técnico - Sistema de Gerenciamento de Jogos
 
-Este projeto é uma solução para o desafio técnico da dti digital, consistindo em um sistema CRUD completo para cadastro, consulta, atualização e remoção de jogos, com persistência em banco SQLite, arquitetura MVC, testes unitários e pronto para execução via Docker.
+Este projeto é uma solução para o desafio técnico da dti digital, consistindo em um sistema CRUD completo para cadastro, consulta, atualização e remoção de jogos, com persistência em banco 🗄️ SQLite, arquitetura MVC, testes unitários e pronto para execução via 🐳 Docker.
 
 ---
 
@@ -8,9 +8,11 @@ Este projeto é uma solução para o desafio técnico da dti digital, consistind
 - [🕹️ Recurso Principal: Jogo](#recurso-principal-jogo)
 - [🛠️ Arquitetura e Tecnologias](#arquitetura-e-tecnologias)
 - [⬇️ Instalação e Dependências](#instalação-e-dependências)
-- [🐳 Como Executar com Docker](#como-executar-com-docker)
-- [⚙️ Execução Manual (Javamaven)](#execução-manual-javamaven)
-- [✨ Funcionalidades e Exemplos de Uso](#funcionalidades-e-exemplos-de-uso)
+- [🚀 Execução da Aplicação](#execução-da-aplicação)
+  - [🐳 Com Docker](#com-docker)
+  - [☕ Com Maven (Desenvolvimento)](#com-maven-desenvolvimento)
+  - [📦 JAR Standalone](#jar-standalone)
+- [✨ Como Usar Cada Funcionalidade (Passo a Passo)](#como-usar-cada-funcionalidade-passo-a-passo)
 - [📝 Exemplo de Arquivo de Log](#exemplo-de-arquivo-de-log)
 - [🗄️ Queries SQL Utilizadas](#queries-sql-utilizadas)
 - [🚀 Possíveis Melhorias Futuras](#possíveis-melhorias-futuras)
@@ -18,31 +20,31 @@ Este projeto é uma solução para o desafio técnico da dti digital, consistind
 
 ---
 
-## Recurso Principal: Jogo
+## 🕹️ Recurso Principal: Jogo
 
 A aplicação gerencia o recurso **Jogo**, que possui as seguintes propriedades:
 
-| Campo           | Obrigatório | Tipo de Dado | Descrição                                 |
-|-----------------|-------------|--------------|--------------------------------------------|
-| id              | Sim         | Inteiro      | Identificador único (gerado automaticamente)|
-| titulo          | Sim         | String       | Título do jogo                             |
-| genero          | Sim         | String       | Gênero do jogo                             |
-| dataLancamento  | Sim         | Data         | Data de lançamento (formato dd/MM/yyyy)    |
-| notaPessoal     | Não         | Double       | Nota pessoal atribuída ao jogo (0 a 10)    |
+| 📄 Campo           | Obrigatório | Tipo de Dado | Descrição                                 |
+|--------------------|-------------|--------------|--------------------------------------------|
+| 🆔 id              | Sim         | Inteiro      | Identificador único (gerado automaticamente)|
+| 🏷️ titulo          | Sim         | String       | Título do jogo                             |
+| 🏷️ genero          | Sim         | String       | Gênero do jogo                             |
+| 📅 dataLancamento  | Sim         | Data         | Data de lançamento (formato dd/MM/yyyy)    |
+| ⭐ notaPessoal     | Não         | Double       | Nota pessoal atribuída ao jogo (0 a 10)    |
 
 - **Obrigatórios:** `id`, `titulo`, `genero`, `dataLancamento`
 - **Opcionais:** `notaPessoal`
 
-Validações são aplicadas para garantir que os campos obrigatórios sejam preenchidos e que a nota pessoal, se informada, esteja entre 0 e 10.
+⚠️ Validações são aplicadas para garantir que os campos obrigatórios sejam preenchidos e que a nota pessoal, se informada, esteja entre 0 e 10.
 
 ---
 
-## Linguagem Escolhida
+## ☕ Linguagem Escolhida
 - **Java 21**
 
 ---
 
-## Arquitetura e Tecnologias
+## 🛠️ Arquitetura e Tecnologias
 - ☕ **Java 21**
 - 📦 **Maven** (gerenciamento de dependências)
 - 🧪 **JUnit 5** (testes unitários)
@@ -51,7 +53,7 @@ Validações são aplicadas para garantir que os campos obrigatórios sejam pree
 - 📝 **SLF4J** (logs)
 - 🐳 **Docker** (containerização)
 
-### 📁 Estrutura do Projeto
+### 📂 Estrutura do Projeto
 ```
 src/
   main/
@@ -71,13 +73,13 @@ pom.xml
 README.md
 ```
 
-### Diagrama de Pacotes
+### 🗺️ Diagrama de Pacotes
 
 ![Diagrama de Pacotes](diagramas/DiagramaDePacotes.PNG)
 
 ---
 
-## Instalação e Dependências
+## ⬇️ Instalação e Dependências
 
 ### 1. Dependências
 - ☕ **Java 21**: [Download](https://www.oracle.com/br/java/technologies/downloads/#java21)
@@ -87,86 +89,77 @@ README.md
 As dependências do projeto são gerenciadas automaticamente pelo Maven (veja `pom.xml`).
 
 ### 2. Instalação
-- Clone o repositório:
+- 📥 Clone o repositório:
   ```sh
   git clone <url-do-repositorio>
   cd DTI_CaseTecnico
   ```
-- Para rodar manualmente, siga para a seção de execução manual.
-- Para rodar via Docker, siga para a próxima seção.
 
 ---
 
-## Como Executar com Docker
+## 🚀 Execução da Aplicação
 
+### 🐳 <a name="com-docker"></a>Com Docker
 > **Pré-requisito:** Docker instalado
 
-Execute o comando abaixo para rodar a aplicação em modo interativo no terminal:
-
+🐳 Execute o comando abaixo para rodar a aplicação em modo interativo no terminal:
 ```sh
 docker run -it --rm ad3ln0r/dti-casetecnico-leandroalencar:1.0
 ```
-
-O banco de dados será criado automaticamente no primeiro uso.
+🗄️ O banco de dados será criado automaticamente no primeiro uso.
 
 ---
 
-## Execução Manual com Maven
-
+### ☕ <a name="com-maven-desenvolvimento"></a>Com Maven (Desenvolvimento)
 > **Pré-requisitos:** Java 21 e Maven instalados
 
-### 1. Compilando o projeto
-Execute o comando abaixo para baixar as dependências e compilar o projeto:
-```sh
-mvn clean package
-```
-Isso irá gerar os arquivos JAR na pasta `target/`.
-
-### 2. Executando via Maven (modo recomendado para desenvolvimento)
-Você pode rodar a aplicação diretamente pelo Maven, que cuida do classpath automaticamente:
-```sh
-mvn exec:java -Dexec.mainClass="org.app.Main"
-```
-Ou rode diretamente pelo seu IDE (IntelliJ, Eclipse, VSCode, etc).
-
-### 3. Executando o JAR gerado
-
-- **JAR principal:**
-  ```sh
-  java -jar target/CaseTecnico_LeandroAlencar_DTI-1.0-SNAPSHOT.jar
-  ```
-  > **Atenção:** Esse JAR não inclui as dependências. Só funciona se você rodar via Maven ou IDE.
-
-- **JAR com dependências (recomendado para produção/entrega):**
-  ```sh
-  java -jar target/CaseTecnico_LeandroAlencar_DTI-1.0-SNAPSHOT-jar-with-dependencies.jar
-  ```
-  > **Esse JAR inclui todas as bibliotecas necessárias** (inclusive o driver do SQLite). Use esse comando para rodar em qualquer máquina, sem precisar de Maven ou IDE.
-
-### 4. Erros comuns
-- Se aparecer o erro `No suitable driver found for jdbc:sqlite:jogos.db`, significa que você está rodando o JAR principal sem dependências. Use o JAR `-jar-with-dependencies.jar`.
-- Se não conseguir deletar a pasta `target`, feche todos os programas que possam estar usando arquivos dela e tente novamente.
+1. ⚙️ Compile o projeto:
+   ```sh
+   mvn clean package
+   ```
+   📦 Isso irá gerar os arquivos JAR na pasta `target/`.
+2. 🏃 Execute pelo Maven (recomendado para desenvolvimento):
+   ```sh
+   mvn exec:java -Dexec.mainClass="org.app.Main"
+   ```
+   Ou rode diretamente pelo seu IDE (IntelliJ, Eclipse, VSCode, etc).
 
 ---
 
-## Funcionalidades e Exemplos de Uso
+### 📦 <a name="jar-standalone"></a>JAR Standalone
+> **Recomendado para rodar fora do Maven/IDE**
 
-A aplicação é totalmente interativa via console. Veja como utilizar cada funcionalidade:
+Após compilar o projeto com `mvn clean package`, utilize o JAR gerado com todas as dependências:
+```sh
+java -jar target/CaseTecnico_LeandroAlencar_DTI-1.0-SNAPSHOT-jar-with-dependencies.jar
+```
+✅ Esse comando garante que todos os drivers e bibliotecas necessários estarão disponíveis, evitando erros como `No suitable driver found for jdbc:sqlite:jogos.db`.
+
+#### ⚠️ Erros comuns
+- ❌ Se aparecer o erro `No suitable driver found for jdbc:sqlite:jogos.db`, significa que você está rodando o JAR principal sem dependências. Use o JAR `-jar-with-dependencies.jar`.
+- ❌ Se não conseguir deletar a pasta `target`, feche todos os programas que possam estar usando arquivos dela e tente novamente.
+
+---
+
+## ✨ Como Usar Cada Funcionalidade (Passo a Passo)
+
+A aplicação é totalmente interativa via console. Veja abaixo como utilizar cada funcionalidade do menu principal, com exemplos e dicas:
 
 ### 🏠 Menu Principal
 ```
 === MENU DE JOGOS ===
-1 - Cadastrar Jogo
-2 - Listar Jogos
-3 - Buscar Jogo por ID
-4 - Atualizar Jogo
-5 - Deletar Jogo
-0 - Sair
+1 - ➕ Cadastrar Jogo
+2 - 📋 Listar Jogos
+3 - 🔍 Buscar Jogo por ID
+4 - ✏️ Atualizar Jogo
+5 - 🗑️ Deletar Jogo
+0 - 🚪 Sair
 ```
 
 ### ➕ 1. Cadastrar Jogo
-- Preencha os campos obrigatórios (título, gênero, data de lançamento). Nota pessoal é opcional.
-- Exemplo:
+- Escolha a opção 1 no menu.
+- Preencha os campos obrigatórios: **Título**, **Gênero**, **Data de Lançamento** (formato dd/MM/yyyy). O campo **Nota Pessoal** é opcional (0 a 10).
+- Exemplo de preenchimento:
 ```
 --- Cadastrar Jogo ---
 Título: The Legend of Zelda
@@ -175,23 +168,32 @@ Data de lançamento (dd/MM/yyyy): 21/02/1986
 Nota pessoal (0-10, opcional): 9.5
 ✅ Jogo cadastrado com sucesso!
 ```
+- 💡 **Dica:** Se algum campo obrigatório ficar em branco, a operação será cancelada e uma mensagem de erro será exibida.
 
 ### 📋 2. Listar Jogos
-- Exibe todos os jogos cadastrados:
+- Escolha a opção 2 no menu.
+- Todos os jogos cadastrados serão exibidos em formato de lista:
 ```
 --- Lista de Jogos ---
 ID: 1 | Título: The Legend of Zelda | Gênero: Aventura | Data de Lançamento: 21/02/1986 | Nota Pessoal: 9.5
 ```
+- 💡 **Dica:** Se não houver jogos cadastrados, a lista estará vazia.
 
 ### 🔍 3. Buscar Jogo por ID
-- Informe o ID do jogo para visualizar seus detalhes:
+- Escolha a opção 3 no menu.
+- Informe o **ID** do jogo que deseja consultar.
+- Exemplo:
 ```
 ID do jogo: 1
 ID: 1 | Título: The Legend of Zelda | Gênero: Aventura | Data de Lançamento: 21/02/1986 | Nota Pessoal: 9.5
 ```
+- ⚠️ **Dica:** Se o ID não existir, será exibida uma mensagem de erro: `❌ Nenhum jogo encontrado com ID X`.
 
 ### ✏️ 4. Atualizar Jogo
-- Informe o ID do jogo e os novos dados:
+- Escolha a opção 4 no menu.
+- Informe o **ID** do jogo que deseja atualizar.
+- Preencha os novos dados para o jogo (os campos seguem as mesmas regras do cadastro).
+- Exemplo:
 ```
 --- Atualizar Jogo ---
 ID do jogo: 1
@@ -201,31 +203,34 @@ Nova data de lançamento (dd/MM/yyyy): 21/02/1986
 Nova nota pessoal (0-10, opcional): 10
 ✅ Jogo atualizado com sucesso!
 ```
+- ⚠️ **Dica:** Se o ID informado não existir, será exibida uma mensagem de erro.
 
 ### 🗑️ 5. Deletar Jogo
-- Informe o ID do jogo para removê-lo:
+- Escolha a opção 5 no menu.
+- Informe o **ID** do jogo que deseja remover.
+- Exemplo:
 ```
 ID do jogo: 1
 🗑️ Jogo deletado com sucesso!
 ```
+- ⚠️ **Dica:** Se o ID informado não existir, será exibida uma mensagem de erro.
 
-### ⚠️ 6. Validações e Mensagens de Erro
-- Campos obrigatórios não preenchidos:
+### ⚠️ Validações e Mensagens de Erro
+- ❌ **Campos obrigatórios não preenchidos:**
 ```
 Título: 
 ❌ Campo obrigatório, operação cancelada!
 ```
-- Busca por ID inexistente:
+- ❌ **Busca por ID inexistente:**
 ```
 ID do jogo: 99
 ❌ Nenhum jogo encontrado com ID 99
 ```
-
-Esses exemplos ilustram o fluxo principal do sistema, incluindo validações e mensagens amigáveis para o usuário. O sistema é totalmente interativo e orienta o usuário em cada etapa.
+- 💡 O sistema sempre orienta o usuário em caso de erro, exibindo mensagens claras e amigáveis.
 
 ---
 
-## Exemplo de Arquivo de Log
+## 📝 Exemplo de Arquivo de Log
 
 Ao final da execução, será gerado um arquivo `logs.txt` com o seguinte formato:
 
@@ -241,7 +246,7 @@ Ao final da execução, será gerado um arquivo `logs.txt` com o seguinte format
 
 ---
 
-## Queries SQL Utilizadas
+## 🗄️ Queries SQL Utilizadas
 
 Abaixo estão as principais queries SQL utilizadas pelo sistema para manipulação do banco de dados SQLite:
 
@@ -273,21 +278,7 @@ DELETE FROM jogo WHERE id=?;
 
 ---
 
-## Executando o JAR com Dependências (Standalone)
-
-> **Recomendado para rodar fora do Maven/IDE**
-
-Após compilar o projeto com `mvn clean package`, utilize o JAR gerado com todas as dependências:
-
-```sh
-java -jar target/CaseTecnico_LeandroAlencar_DTI-1.0-SNAPSHOT-jar-with-dependencies.jar
-```
-
-Esse comando garante que todos os drivers e bibliotecas necessários estarão disponíveis, evitando erros como `No suitable driver found for jdbc:sqlite:jogos.db`.
-
----
-
-## Possíveis Melhorias Futuras
+## 🚀 Possíveis Melhorias Futuras
 - 🖥️ Interface gráfica (GUI) ou API REST
 - 🔒 Autenticação de usuário
 - 📑 Paginação e filtros na listagem de jogos
@@ -295,7 +286,7 @@ Esse comando garante que todos os drivers e bibliotecas necessários estarão di
 
 ---
 
-## Contato
+## 📞 Contato
 Dúvidas ou sugestões:
 - **Leandro Alencar**
 - 📧 E-mail: Leandro130333.dev@gmail.com
