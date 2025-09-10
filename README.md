@@ -7,7 +7,7 @@ Este projeto é uma solução para o desafio técnico da dti digital, consistind
 ## 📑 Sumário
 - [🎲 Recurso Principal: Jogo](#-recurso-principal-jogo)
 - [☕ Linguagem Escolhida](#-linguagem-escolhida)
-- [🏗️ Arquitetura e Tecnologias](#https://github.com/alencarleandro/DTI_CaseTecnico?tab=readme-ov-file#%EF%B8%8F-arquitetura-e-tecnologias)
+- [🏗️ Arquitetura e Tecnologias](https://github.com/alencarleandro/DTI_CaseTecnico?tab=readme-ov-file#%EF%B8%8F-arquitetura-e-tecnologias)
 - [📂 Estrutura do Projeto](#-estrutura-do-projeto)
 - [📦 Instalação e Dependências](#-instalacao-e-dependencias)
 - [🚀 Execução da Aplicação](#-execucao-da-aplicacao)
