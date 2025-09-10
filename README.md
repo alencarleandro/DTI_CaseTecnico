@@ -9,9 +9,9 @@ Este projeto é uma solução para o desafio técnico da dti digital, consistind
 - [🛠️ Arquitetura e Tecnologias](#arquitetura-e-tecnologias)
 - [⬇️ Instalacao e Dependencias](#instalacao-e-dependencias)
 - [🚀 Execucao da Aplicacao](#execucao-da-aplicacao)
-  - [🐳 Com Docker](#com-docker)
-  - [☕ Com Maven (Desenvolvimento)](#com-maven-desenvolvimento)
-  - [📦 JAR Standalone](#jar-standalone)
+- [🐳 Com Docker](#com-docker)
+- [☕ Com Maven (Desenvolvimento)](#com-maven-desenvolvimento)
+- [📦 JAR Standalone](#jar-standalone)
 - [✨ Como Usar Cada Funcionalidade (Passo a Passo)](#como-usar-cada-funcionalidade-passo-a-passo)
 - [📝 Exemplo de Arquivo de Log](#exemplo-de-arquivo-de-log)
 - [🗄️ Queries SQL Utilizadas](#queries-sql-utilizadas)
@@ -99,10 +99,11 @@ As dependências do projeto são gerenciadas automaticamente pelo Maven (veja `p
 
 ## 🚀 Execucao da Aplicacao
 
-### 🐳 <a name="com-docker"></a>Com Docker
+### 🐳 Com Docker
 > **Pré-requisito:** Docker instalado
 
 🐳 Execute o comando abaixo para rodar a aplicação em modo interativo no terminal:
+
 ```sh
 docker run -it --rm ad3ln0r/dti-casetecnico-leandroalencar:1.0
 ```
@@ -110,7 +111,7 @@ docker run -it --rm ad3ln0r/dti-casetecnico-leandroalencar:1.0
 
 ---
 
-### ☕ <a name="com-maven-desenvolvimento"></a>Com Maven (Desenvolvimento)
+### ☕ Com Maven (Desenvolvimento)
 > **Pré-requisitos:** Java 21 e Maven instalados
 
 1. ⚙️ Compile o projeto:
@@ -126,7 +127,7 @@ docker run -it --rm ad3ln0r/dti-casetecnico-leandroalencar:1.0
 
 ---
 
-### 📦 <a name="jar-standalone"></a>JAR Standalone
+### 📦 JAR Standalone
 > **Recomendado para rodar fora do Maven/IDE**
 
 Após compilar o projeto com `mvn clean package`, utilize o JAR gerado com todas as dependências:
