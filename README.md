@@ -107,7 +107,7 @@ As dependências do projeto são gerenciadas automaticamente pelo Maven (veja `p
 ## 🚀 Execução da Aplicação
 
 ### 🐳 Com Docker
-> **Pré-requisito:** Docker instalado
+> **Pré-requisito:** Docker instalado e em execução
 
 🐳 Execute o comando abaixo para rodar a aplicação em modo interativo no terminal:
 ```sh
