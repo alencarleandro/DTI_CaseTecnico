@@ -21,7 +21,7 @@ Este projeto é uma solução para o desafio técnico da dti digital, consistind
 
 ---
 
-## 🎲 Recurso Principal: Jogo
+## 🎲Recurso Principal: Jogo
 
 A aplicação gerencia o recurso **Jogo**, que possui as seguintes propriedades:
 
@@ -40,12 +40,12 @@ A aplicação gerencia o recurso **Jogo**, que possui as seguintes propriedades:
 
 ---
 
-## ☕ Linguagem Escolhida
+## ☕Linguagem Escolhida
 - **Java 21**
 
 ---
 
-## 🏗️ Arquitetura e Tecnologias
+## 🏗️Arquitetura e Tecnologias
 - ☕ **Java 21**
 - 📦 **Maven** (gerenciamento de dependências)
 - 🧪 **JUnit 5** (testes unitários)
@@ -54,7 +54,7 @@ A aplicação gerencia o recurso **Jogo**, que possui as seguintes propriedades:
 - 📝 **SLF4J** (logs)
 - 🐳 **Docker** (containerização)
 
-### 📂 Estrutura do Projeto
+### 📂Estrutura do Projeto
 ```text
 src/
   main/
@@ -74,13 +74,13 @@ pom.xml
 README.md
 ```
 
-### 🗺️ Diagrama de Pacotes
+### 🗺️Diagrama de Pacotes
 
 ![Diagrama de Pacotes](diagramas/DiagramaDePacotes.PNG)
 
 ---
 
-## 📦 Instalação e Dependências
+## 📦Instalação e Dependências
 
 ### 1. Dependências
 - ☕ **Java 21**: [Download](https://www.oracle.com/br/java/technologies/downloads/#java21)
@@ -98,9 +98,9 @@ As dependências do projeto são gerenciadas automaticamente pelo Maven (veja `p
 
 ---
 
-## 🚀 Execução da Aplicação
+## 🚀Execução da Aplicação
 
-### 🐳 Com Docker
+### 🐳Com Docker
 > **Pré-requisito:** Docker instalado
 
 🐳 Execute o comando abaixo para rodar a aplicação em modo interativo no terminal:
@@ -111,7 +111,7 @@ docker run -it --rm ad3ln0r/dti-casetecnico-leandroalencar:1.0
 
 ---
 
-### ☕ Com Maven (Desenvolvimento)
+### ☕Com Maven (Desenvolvimento)
 > **Pré-requisitos:** Java 21 e Maven instalados
 
 1. ⚙️ Compile o projeto:
@@ -127,7 +127,7 @@ docker run -it --rm ad3ln0r/dti-casetecnico-leandroalencar:1.0
 
 ---
 
-### 📦 JAR Standalone
+### 📦JAR Standalone
 > **Recomendado para rodar fora do Maven/IDE**
 
 Após compilar o projeto com `mvn clean package`, utilize o JAR gerado com todas as dependências:
@@ -136,13 +136,13 @@ java -jar target/CaseTecnico_LeandroAlencar_DTI-1.0-SNAPSHOT-jar-with-dependenci
 ```
 ✅ Esse comando garante que todos os drivers e bibliotecas necessários estarão disponíveis, evitando erros como `No suitable driver found for jdbc:sqlite:jogos.db`.
 
-#### ⚠️ Erros comuns
+#### ⚠️Erros comuns
 - ❌ Se aparecer o erro `No suitable driver found for jdbc:sqlite:jogos.db`, significa que você está rodando o JAR principal sem dependências. Use o JAR `-jar-with-dependencies.jar`.
 - ❌ Se não conseguir deletar a pasta `target`, feche todos os programas que possam estar usando arquivos dela e tente novamente.
 
 ---
 
-## 🕹️ Como Usar Cada Funcionalidade (Passo a Passo)
+## 🕹️Como Usar Cada Funcionalidade (Passo a Passo)
 
 A aplicação é totalmente interativa via console. Veja abaixo como utilizar cada funcionalidade do menu principal, com exemplos e dicas:
 
@@ -228,7 +228,7 @@ A aplicação é totalmente interativa via console. Veja abaixo como utilizar ca
 
 ---
 
-## 📝 Exemplo de Arquivo de Log
+## 📝Exemplo de Arquivo de Log
 
 Ao final da execução, será gerado um arquivo `logs.txt` com o seguinte formato:
 
@@ -244,7 +244,7 @@ Ao final da execução, será gerado um arquivo `logs.txt` com o seguinte format
 
 ---
 
-## 🗄️ Queries SQL Utilizadas
+## 🗄️Queries SQL Utilizadas
 
 Abaixo estão as principais queries SQL utilizadas pelo sistema para manipulação do banco de dados SQLite:
 
@@ -276,7 +276,7 @@ DELETE FROM jogo WHERE id=?;
 
 ---
 
-## 💡 Possíveis Melhorias Futuras
+## 💡Possíveis Melhorias Futuras
 - 🖥️ Interface gráfica (GUI) ou API REST
 - 🔒 Autenticação de usuário
 - 📑 Paginação e filtros na listagem de jogos
@@ -284,7 +284,7 @@ DELETE FROM jogo WHERE id=?;
 
 ---
 
-## 📬 Contato
+## 📬Contato
 Dúvidas ou sugestões:
 - **Leandro Alencar**
 - 📧 E-mail: Leandro130333.dev@gmail.com
