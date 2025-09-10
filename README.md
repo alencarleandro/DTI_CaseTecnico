@@ -7,15 +7,15 @@ Este projeto é uma solução para o desafio técnico da dti digital, consistind
 ## 📑 Sumário
 - [🕹️ Recurso Principal: Jogo](#recurso-principal-jogo)
 - [🛠️ Arquitetura e Tecnologias](#arquitetura-e-tecnologias)
-- [⬇️ Instalação e Dependências](#instalacao-e-dependencias)
-- [🚀 Execução da Aplicação](#execucao-da-aplicacao)
+- [⬇️ Instalacao e Dependencias](#instalacao-e-dependencias)
+- [🚀 Execucao da Aplicacao](#execucao-da-aplicacao)
   - [🐳 Com Docker](#com-docker)
   - [☕ Com Maven (Desenvolvimento)](#com-maven-desenvolvimento)
   - [📦 JAR Standalone](#jar-standalone)
 - [✨ Como Usar Cada Funcionalidade (Passo a Passo)](#como-usar-cada-funcionalidade-passo-a-passo)
 - [📝 Exemplo de Arquivo de Log](#exemplo-de-arquivo-de-log)
 - [🗄️ Queries SQL Utilizadas](#queries-sql-utilizadas)
-- [🚀 Possíveis Melhorias Futuras](#possiveis-melhorias-futuras)
+- [🚀 Possiveis Melhorias Futuras](#possiveis-melhorias-futuras)
 - [📞 Contato](#contato)
 
 ---
