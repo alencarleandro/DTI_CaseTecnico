@@ -79,7 +79,7 @@ README.md
 
 ---
 
-## ⬇️ Instalação e Dependências
+## ⬇️ Instalacao e Dependencias
 
 ### 1. Dependências
 - ☕ **Java 21**: [Download](https://www.oracle.com/br/java/technologies/downloads/#java21)
@@ -97,7 +97,7 @@ As dependências do projeto são gerenciadas automaticamente pelo Maven (veja `p
 
 ---
 
-## 🚀 Execução da Aplicação
+## 🚀 Execucao da Aplicacao
 
 ### 🐳 <a name="com-docker"></a>Com Docker
 > **Pré-requisito:** Docker instalado
