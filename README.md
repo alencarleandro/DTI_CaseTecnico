@@ -5,22 +5,22 @@ Este projeto é uma solução para o desafio técnico da dti digital, consistind
 ---
 
 ## 📑 Sumário
-- [🕹️ Recurso Principal: Jogo](#-recurso-principal-jogo)
-- [🛠️ Arquitetura e Tecnologias](#-arquitetura-e-tecnologias)
-- [⬇️ Instalação e Dependências](#-instalacao-e-dependencias)
-- [🚀 Execução da Aplicação](#-execucao-da-aplicacao)
-- [🐳 Com Docker](#-com-docker)
-- [☕ Com Maven (Desenvolvimento)](#-com-maven-desenvolvimento)
-- [📦 JAR Standalone](#-jar-standalone)
-- [✨ Como Usar Cada Funcionalidade (Passo a Passo)](#-como-usar-cada-funcionalidade-passo-a-passo)
-- [📝 Exemplo de Arquivo de Log](#-exemplo-de-arquivo-de-log)
-- [🗄️ Queries SQL Utilizadas](#-queries-sql-utilizadas)
-- [🚀 Possíveis Melhorias Futuras](#-possiveis-melhorias-futuras)
-- [📞 Contato](#-contato)
+- [Recurso Principal: Jogo](#recurso-principal-jogo)
+- [Arquitetura e Tecnologias](#arquitetura-e-tecnologias)
+- [Instalacao e Dependencias](#instalacao-e-dependencias)
+- [Execucao da Aplicacao](#execucao-da-aplicacao)
+- [Com Docker](#com-docker)
+- [Com Maven (Desenvolvimento)](#com-maven-desenvolvimento)
+- [JAR Standalone](#jar-standalone)
+- [Como Usar Cada Funcionalidade (Passo a Passo)](#como-usar-cada-funcionalidade-passo-a-passo)
+- [Exemplo de Arquivo de Log](#exemplo-de-arquivo-de-log)
+- [Queries SQL Utilizadas](#queries-sql-utilizadas)
+- [Possiveis Melhorias Futuras](#possiveis-melhorias-futuras)
+- [Contato](#contato)
 
 ---
 
-## 🕹️ Recurso Principal: Jogo
+## Recurso Principal: Jogo
 
 A aplicação gerencia o recurso **Jogo**, que possui as seguintes propriedades:
 
@@ -79,7 +79,7 @@ README.md
 
 ---
 
-## ⬇️ Instalacao e Dependencias
+## Instalacao e Dependencias
 
 ### 1. Dependências
 - ☕ **Java 21**: [Download](https://www.oracle.com/br/java/technologies/downloads/#java21)
@@ -97,7 +97,7 @@ As dependências do projeto são gerenciadas automaticamente pelo Maven (veja `p
 
 ---
 
-## 🚀 Execucao da Aplicacao
+## Execucao da Aplicacao
 
 ### 🐳 Com Docker
 > **Pré-requisito:** Docker instalado
@@ -142,7 +142,7 @@ java -jar target/CaseTecnico_LeandroAlencar_DTI-1.0-SNAPSHOT-jar-with-dependenci
 
 ---
 
-## ✨ Como Usar Cada Funcionalidade (Passo a Passo)
+## Como Usar Cada Funcionalidade (Passo a Passo)
 
 A aplicação é totalmente interativa via console. Veja abaixo como utilizar cada funcionalidade do menu principal, com exemplos e dicas:
 
@@ -231,7 +231,7 @@ ID do jogo: 99
 
 ---
 
-## 📝 Exemplo de Arquivo de Log
+## Exemplo de Arquivo de Log
 
 Ao final da execução, será gerado um arquivo `logs.txt` com o seguinte formato:
 
@@ -247,7 +247,7 @@ Ao final da execução, será gerado um arquivo `logs.txt` com o seguinte format
 
 ---
 
-## 🗄️ Queries SQL Utilizadas
+## Queries SQL Utilizadas
 
 Abaixo estão as principais queries SQL utilizadas pelo sistema para manipulação do banco de dados SQLite:
 
@@ -279,7 +279,7 @@ DELETE FROM jogo WHERE id=?;
 
 ---
 
-## 🚀 Possíveis Melhorias Futuras
+## Possiveis Melhorias Futuras
 - 🖥️ Interface gráfica (GUI) ou API REST
 - 🔒 Autenticação de usuário
 - 📑 Paginação e filtros na listagem de jogos
@@ -287,7 +287,7 @@ DELETE FROM jogo WHERE id=?;
 
 ---
 
-## 📞 Contato
+## Contato
 Dúvidas ou sugestões:
 - **Leandro Alencar**
 - 📧 E-mail: Leandro130333.dev@gmail.com
